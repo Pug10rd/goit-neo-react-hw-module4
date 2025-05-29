@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import { ClipLoader } from "react-spinners";
 import { getPhotos } from "./api/api";
 import style from "./App.module.css";
-import PhotoGallery from "./components/PhotoGallery/PhotoGallery";
-import PhotoSearchForm from "./components/PhotoSearchForm/PhotoSearchForm";
+import ImageGallery from "./components/ImageGallery/ImageGallery";
+import SearchBar from "./components/SearchBar/SearchBar";
 import ErrorMessage from "./components/ErrorMessage/ErrorMessage";
 import LoadMoreBtn from "./components/LoadMoreBtn/LoadMoreBtn";
-import PhotoModal from "./components/PhotoModal/PhotoModal";
+import ImageModal from "./components/ImageModal/ImageModal";
 
 const override = {
   display: "block",
@@ -69,15 +69,12 @@ function App() {
 
   return (
     <>
-      <PhotoSearchForm
-        handleSearchBar={handleSearchBar}
-        isDisabled={isLoading}
-      />
+      <SearchBar handleSearchBar={handleSearchBar} isDisabled={isLoading} />
       <div className={style.container}>
         {error ? (
           <ErrorMessage />
         ) : photos.length > 0 ? (
-          <PhotoGallery photos={photos} openModal={openModal} />
+          <ImageGallery photos={photos} openModal={openModal} />
         ) : (
           <p>No results, pls enter new search request</p>
         )}
@@ -89,7 +86,7 @@ function App() {
           data-testid="loader"
         />
         {page < maxPage && <LoadMoreBtn handleLoadMore={handleLoadMore} />}
-        <PhotoModal
+        <ImageModal
           modalIsOpen={modalIsOpen}
           closeModal={closeModal}
           selectedPhoto={selectedPhoto}

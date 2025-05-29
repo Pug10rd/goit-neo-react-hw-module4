@@ -1,6 +1,6 @@
 import toast, { Toaster } from "react-hot-toast";
 import { FaSearch } from "react-icons/fa";
-import style from "./PhotoSearchForm.module.css";
+import style from "./SearchBar.module.css";
 
 const SearchBar = ({ handleSearchBar, isDisabled }) => {
   const handleSearch = (event) => {

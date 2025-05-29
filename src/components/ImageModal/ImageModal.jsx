@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Modal from "react-modal";
-import style from "./PhotoModal.module.css";
+import style from "./ImageModal.module.css";
 
 Modal.setAppElement("#root");
 
-const PhotoModal = ({ modalIsOpen, closeModal, selectedPhoto }) => {
+const ImageModal = ({ modalIsOpen, closeModal, selectedPhoto }) => {
   return (
     <Modal
       isOpen={modalIsOpen}
@@ -50,4 +50,4 @@ const PhotoModal = ({ modalIsOpen, closeModal, selectedPhoto }) => {
   );
 };
 
-export default PhotoModal;
+export default ImageModal;
